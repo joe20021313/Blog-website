@@ -25,26 +25,25 @@ export default function SearchBox() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-     <div className="container" style={{ maxWidth: "100%"}}>
-          <TextField
-            style={{ paddingBottom: "1rem" }}
-            variant="outlined"
-            placeholder="Search..."
-            fullWidth
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            InputProps={{
-              endAdornment: (
-                <InputAdornment position="end">
-                  <Button type="submit">Search</Button>
-                </InputAdornment>
-              ),
-            }}
-          />
-        </div>
-    </form>
-
+        <form onSubmit={handleSubmit} style={{ maxWidth: "100%", margin: "1 auto", display: "flex", justifyContent: "center", paddingTop:"5rem" }}>
+            <div className="container" style={{ maxWidth: "80%", display: "flex", justifyContent: "center" }}>
+                <TextField
+                    style={{ paddingBottom: "1rem", width: "clamp(250px, 100%, 2000px)", margin: "1 auto" }}
+                    variant="outlined"
+                    placeholder="Search..."
+                    fullWidth
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                    InputProps={{
+                        endAdornment: (
+                            <InputAdornment position="end">
+                                <Button type="submit">Search</Button>
+                            </InputAdornment>
+                        ),
+                    }}
+                />
+            </div>
+        </form>
 
   );
 }

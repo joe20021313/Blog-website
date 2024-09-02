@@ -13,7 +13,8 @@ export default function Pagination({ currentPage, totalPages }) {
   };
 
   return (
-    <Box sx={{ display: "flex", justifyContent: "center", marginTop: "2rem", gap: 1 }}>
+    <Box sx={{ display: "flex", justifyContent: "center", marginTop: "2rem", gap: 1,   width: "clamp(250px, 100%, 2000px)",
+      margin: "1 auto", paddingBottom:"2rem" }}>
       {currentPage > 1 && (
         <Button variant="outlined" onClick={() => goToPage(currentPage - 1)}>
           {"<"}

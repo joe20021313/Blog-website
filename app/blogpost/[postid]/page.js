@@ -34,9 +34,9 @@ export default async function BlogPost({ params }) {
 
   return (
     <div>
-      <main className="flex min-h-screen flex-col justify-between p-24">
+      <main className="flex min-h-screen flex-col justify-between p-10">
         <div style={{ paddingBottom: "1rem" }} key={post.id}>
-          <Card sx={{ maxWidth: "100%" }}>
+          <Card sx={{   width: "clamp(300px, 100%, 2000px)", }}>
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
                 {post.title.rendered}

@@ -82,19 +82,26 @@ export default async function PostsPage({ searchParams }) {
         }}
       >
         {" "}
-        <h1
+        <h1 className="title"
           style={{ textAlign: "center", fontSize: "2rem", paddingTop: "1rem" }}
         >
           Blog Posts
         </h1>
       </div>
+      <div >
+      <SearchBox />
 
-      <main className="flex min-h-screen flex-col justify-between p-24">
-        <SearchBox />
+      </div>
+      
+      <main className="flex min-h-screen flex-col justify-between p-15">
+       
         {posts.length > 0 ? (
           posts.map((post) => (
-            <div style={{ paddingBottom: "1rem" }} key={post.id}>
-              <Card sx={{ maxWidth: "100%" }}>
+            <div className="posts" style={{ paddingBottom: "1rem" }} key={post.id}>
+              <Card className="card" sx={{
+                  width: "clamp(300px, 80%, 2000px)",
+                  margin: "0 auto", 
+                }}>
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
                     {post.title.rendered}
