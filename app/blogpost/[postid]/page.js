@@ -34,7 +34,7 @@ export default async function BlogPost({ params }) {
 
   return (
     <div>
-      <main className="flex min-h-screen flex-col justify-between p-10">
+      <main className="flex min-h-screen flex-col justify-between p-8">
         <div style={{ paddingBottom: "1rem" }} key={post.id}>
           <Card sx={{   width: "clamp(300px, 100%, 2000px)", }}>
             <CardContent>
@@ -45,11 +45,12 @@ export default async function BlogPost({ params }) {
                  fontSize: "0.8rem",
                  color: "rgba(128, 128, 128, 0.6)"
               }}>{new Date(post.date).toLocaleDateString()}</p>
-              <Typography variant="body2" sx={{ color: "black" }} dangerouslySetInnerHTML={{ __html: post.content.rendered }}>
+              <Typography variant="body2" sx={{ color: "text.secondary" }} dangerouslySetInnerHTML={{ __html: post.content.rendered }}>
               </Typography>
             </CardContent>
 
             <CardActions>
+              
               <Button component={Link} href={`/`}>
                 Go back
               </Button>
